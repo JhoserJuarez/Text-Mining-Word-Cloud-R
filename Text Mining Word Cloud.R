@@ -49,13 +49,6 @@ class(x)
 x<- gsub("newword","word in Raw_Data",x,ignore.case=T)
 # You can replace as many words or special characters in the Raw_Data by using gsub() in gsubfn package
 
-#Text Inspection
-xText = Corpus(VectorSource(x))
-Text_data<-data.frame(inspect_text(xText))
-write.table(Text_data,"Text_data.txt",sep="\t",row.names=FALSE) #The Text_data.txt will be saved in your current working directory
-# Word Replacement ends here
-
-
 
 # CORPUS Creation and Cleansing
 Raw_Data$Text<-as.factor(x)
@@ -118,3 +111,5 @@ windows()
   plot.new()
   text(x=0.5, y=0.5, "APPLE - TRIGRAM WORD CLOUD")
   wordcloud(freq.df$word,freq.df$freq,max.words=50,scale = c(2,.5),random.order = F, colors=1:10, main = "Title")
+        
+# CODE END HERE
